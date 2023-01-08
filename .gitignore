@@ -1,0 +1,8 @@
+*/*.o
+*/*.a
+obj
+push_swap
+checker
+log_error
+tester.sh
+.vscode
