@@ -6,7 +6,7 @@
 /*   By: fsanches <fsanches@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 18:51:39 by fsanches          #+#    #+#             */
-/*   Updated: 2022/12/06 18:51:47 by fsanches         ###   ########.fr       */
+/*   Updated: 2023/01/08 17:25:16 by fsanches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_stack_push(t_data *data, int id)
 		from = data->b;
 		to = data->a;
 	}
-	else if (id == B)
+	else
 	{
 		from = data->a;
 		to = data->b;
