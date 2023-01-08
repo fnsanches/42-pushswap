@@ -6,9 +6,20 @@
 #    By: fsanches <fsanches@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 11:04:11 by fsanches          #+#    #+#              #
-#    Updated: 2023/01/07 11:04:14 by fsanches         ###   ########.fr        #
+#    Updated: 2023/01/08 19:18:59 by fsanches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# Tester da Lais Arena = https://github.com/laisarena/push_swap_tester
+# Testes sem checker
+#                   make full_test (apos usar o make para compilar o push_swap)
+# Teste na mão, com o checker bônus
+# 		export ARGPUSHSWAP=$(shuf -i 0-10000 -n 2) 
+# 		# Para criar uma string de números aleatórios #
+#		## (modificar o 2 para aumentar os números na string) ##
+#		echo $ARGPUSHSWAP
+#		# Para confirmar que criou a string
+#       ./push_swap $ARGPUSHSWAP | ./checker $ARGPUSHSWAP
 
 NAME 			= push_swap
 NAME_BONUS		= checker
@@ -85,5 +96,18 @@ clean:
 fclean:			clean
 				make -C $(LIBFT_PATH) fclean
 				$(RM) $(NAME) $(NAME_BONUS)
+
+full_test: $(NAME)
+	@clear
+	@echo -n "  2 args      = "
+	@./push_swap $(shell shuf -i 0-10000 -n 2) | wc -l
+	@echo -n "  3 args      = "
+	@./push_swap $(shell shuf -i 0-10000 -n 3) | wc -l
+	@echo -n "  5 args      = "
+	@./push_swap $(shell shuf -i 0-10000 -n 5) | wc -l
+	@echo -n "100 args      = "
+	@./push_swap $(shell shuf -i 0-10000 -n 100) | wc -l
+	@echo -n "500 args      = "
+	@./push_swap $(shell shuf -i 0-10000 -n 500) | wc -l
 
 .PHONY:			all clean fclean re bonus rebonus
